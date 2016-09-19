@@ -331,6 +331,11 @@ public class AHBottomNavigation extends FrameLayout {
 						paramsNotification.rightMargin, paramsNotification.bottomMargin);
 			}
 
+			if (item.getCustomWidth() != 0 && item.getCustomHeight() != 0) {
+				icon.getLayoutParams().width = item.getCustomWidth();
+				icon.getLayoutParams().height = item.getCustomHeight();
+			}
+
 			if (colored) {
 				if (i == currentItem) {
 					setBackgroundColor(item.getColor(context));

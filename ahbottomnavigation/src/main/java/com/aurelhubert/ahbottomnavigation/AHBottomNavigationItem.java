@@ -20,6 +20,8 @@ public class AHBottomNavigationItem {
 	private String title = "";
 	private Drawable drawable;
 	private int color = Color.GRAY;
+	private int customWidth = 0;
+	private int customHeight = 0;
 
 	private
 	@StringRes
@@ -89,6 +91,30 @@ public class AHBottomNavigationItem {
 		this.title = title;
 		this.drawable = drawable;
 		this.color = color;
+	}
+
+	public AHBottomNavigationItem(String title, @DrawableRes int resource, @ColorRes int color, int customWidth, int customHeight) {
+		this.title = title;
+		this.drawableRes = resource;
+		this.color = color;
+		this.customWidth = customWidth;
+		this.customHeight = customHeight;
+	}
+
+	public AHBottomNavigationItem(@StringRes int titleRes, @DrawableRes int drawableRes, @ColorRes int colorRes, int customWidth, int customHeight) {
+		this.titleRes = titleRes;
+		this.drawableRes = drawableRes;
+		this.colorRes = colorRes;
+		this.customWidth = customWidth;
+		this.customHeight = customHeight;
+	}
+
+	public int getCustomWidth() {
+		return customWidth;
+	}
+
+	public int getCustomHeight() {
+		return customHeight;
 	}
 
 	public String getTitle(Context context) {
